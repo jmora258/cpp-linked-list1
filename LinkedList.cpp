@@ -114,8 +114,46 @@ void LinkedList::addItem(string v)
 }
 
 
+void LinkedList::deleteItem(string v)
+{
+	
+	// if empty do nothing, just return 
+	if(head == nullptr)
+		return; 
+	// If first node holds the value we want to delete, 
+	// proceed to delete it.
+	if( head->value == v )
+	{
+		//  itemToDelete ptr will hold address of the node we want to delete
+		Node *itemToDelete = head; 
+		// Update head ptr to the second node in the list: 
+		head = itemToDelete->next; 
+		delete itemToDelete; 
 
+		// done!
+		return; 
+	}
 
+	// delete item located somewhere between head & last item
+	Node *temp = head; // to traverse the list
+
+	while (temp != nullptr) // traverse 
+	{
+		if( (temp->next != nullptr) && (temp->next->value == v))
+		{
+			break; // temp points to the node above
+		}
+
+		temp = temp->next; 
+	}
+	if( temp!= nullptr) // found the value to be deleted
+	{
+		Node *itemToDelete = temp->next; // 
+		// link to the node below the target
+		temp->next = itemToDelete->next; 
+		delete itemToDelete; // delete target node 
+	}
+}
 
 
 

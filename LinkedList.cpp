@@ -156,7 +156,23 @@ void LinkedList::deleteItem(string v)
 }
 
 
+bool LinkedList::findItem(string v)
+{
+	// if empty list, return false
+	if(head == nullptr)
+		return false; 
 
+	// To traverse list to find item 
+	Node *p = head; 
+
+	while( p != nullptr) 
+	{
+		if(p->value == v)
+			return true; // value found 
+		p = p->next; 
+	}
+	return false; // value not found
+}
 
 
 

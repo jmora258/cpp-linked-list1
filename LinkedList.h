@@ -14,6 +14,7 @@ class LinkedList
 {
 	public: 
 		LinkedList();
+		~LinkedList();
 		void addToFront(string v);
 		void addToRear(string v);
 		void addItem(string v); // add item to anywhere in the list
@@ -24,4 +25,5 @@ class LinkedList
 	private: 
 	
 		Node *head; 
+		Node *tail; 
 };

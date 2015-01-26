@@ -70,6 +70,7 @@ void LinkedList::addToRear(string v)
 		temp->next = n; // link new node to the last node in the list
 
 		n->next = nullptr; // terminate list
+	}
 }
 
 

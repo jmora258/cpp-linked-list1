@@ -17,9 +17,16 @@ struct Node
 
 LinkedList::LinkedList()
 {
-	// construct empty list
+	// Construct empty list
 	head = nullptr; 
 }
+
+LinkedList::~LinkedList()
+{
+	// Destructor 
+	
+}
+
 
 void LinkedList::printItems()
 {
@@ -155,7 +162,6 @@ void LinkedList::deleteItem(string v)
 	}
 }
 
-
 bool LinkedList::findItem(string v)
 {
 	// if empty list, return false
@@ -173,18 +179,4 @@ bool LinkedList::findItem(string v)
 	}
 	return false; // value not found
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

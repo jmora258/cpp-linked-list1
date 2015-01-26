@@ -73,7 +73,45 @@ void LinkedList::addToRear(string v)
 	}
 }
 
+void LinkedList::addItem(string v)
+{
+	// if list is empty, use addToFront() method 
+	if( head != nullptr)
+	{	
+		addToFront(v); 
+	} 
+	// else if the list has one item, isert in alphabetical order
+	// condition decides whether item belongs at the top
+	else if ( v < head->value) 
+	{ 
+		addToFront(v); 
+	}
+	else // new node to be inserted somewhere in the middle
+	{
+		// 1. allocate and fill the new item 
+		Node *p = head;  // to traverse the list 
 
+		// traverse the list 
+		while ( p->next != nullptr )
+		{
+			// determine where v should be inserted
+			if( (v >= p->value) && ( v <= p->next->value) ) 
+			{
+				break; // break out of the loop 
+			}
+
+			p = p->next; // move down the list by one node 
+		}
+
+		Node *newItem = new Node; 
+		newItem->value = v; // fill in node's value 
+
+		// lastly, link the new node into the one right above the 
+		// desired node
+		newItem->next = p->next; 
+		p->next = newItem; 
+	}
+}
 
 
 

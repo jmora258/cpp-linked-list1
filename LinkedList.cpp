@@ -24,7 +24,16 @@ LinkedList::LinkedList()
 LinkedList::~LinkedList()
 {
 	// Destructor 
-	
+
+	Node *p = head; 
+
+	while ( p != nullptr)
+	{
+		Node *n = p->next; // store address of next item
+		delete p; // delete current item 
+		p = n; // assign address of next item to p
+	}
+
 }
 
 

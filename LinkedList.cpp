@@ -23,7 +23,7 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList()
 {
-	// Destructor 
+	// Destructor  
 
 	Node *p = head; 
 
@@ -33,9 +33,7 @@ LinkedList::~LinkedList()
 		delete p; // delete current item 
 		p = n; // assign address of next item to p
 	}
-
 }
-
 
 void LinkedList::printItems()
 {

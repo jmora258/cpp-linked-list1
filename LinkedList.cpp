@@ -19,6 +19,7 @@ LinkedList::LinkedList()
 {
 	// Construct empty list
 	head = nullptr; 
+
 }
 
 LinkedList::~LinkedList()
